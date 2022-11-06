@@ -9,6 +9,10 @@
     margin: 0;
   }
 
+  .lettersquares-section {
+    margin-top: 50px;
+  }
+
 
 .row-of-squares {
     margin-left: auto;
@@ -16,7 +20,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
   }
 
 .lettersquare {
@@ -28,5 +32,5 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    margin: 5px;
+    margin: 2px;
   }
