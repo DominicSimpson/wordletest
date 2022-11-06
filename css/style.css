@@ -9,21 +9,26 @@
     margin: 0;
   }
 
+  h2 {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 150px;
+  }
+
   .lettersquares-section {
     margin-top: 50px;
   }
 
-
-.row-of-squares {
+  .row-of-squares {
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
   }
 
-.lettersquare {
+  .lettersquare {
     width: 50px;
     height: 50px;
     display: flex;
@@ -34,3 +39,28 @@
     padding: 1rem;
     margin: 2px;
   }
+
+  .to-do-input-section {
+    margin-top: 25px;
+    text-align: center;
+  }
+
+
+  /*** Footer ***/
+
+footer {
+    background-color: #343434;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer span {
+  display: block;
+}
