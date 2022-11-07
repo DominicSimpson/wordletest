@@ -45,6 +45,24 @@
     text-align: center;
   }
 
+  .keyboard-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .keyboard-row {
+    padding: 5px;
+    touch-action: manipulation;
+  }
+
+  .keyboard-row button {
+    cursor: pointer;
+  }
+
+  .wide-button {
+    width: 80px;
+  }
+
 
   /*** Footer ***/
 
