@@ -14,22 +14,23 @@ let guessedWordCount = 0;
 
 
 function getTileColor (letter, index) {
-    const isCorrectLetter = word.includes(letter);
+    const isCorrectLetter = word.includes(letter); // checks if inputted letter features in correct word
 
     if (!isCorrectLetter) {
         return "rgb(58,58,60)";
 
     }
 
-    const letterInPosition = word.charAt(index); // Returns the correct letter in the word
+    const letterInPosition = word.charAt(index); // Returns the respective letter of each numeric point in the word, 
+                                                // e.g., in word, 1 is r, 2 is a, etc.
     console.log(letterInPosition);
     const isCorrectPosition = letter === letterInPosition;    
 
     if (isCorrectPosition) {
-        return "rgb(83,141,78)";
+        return "rgb(83,141,78)"; // if inputted letter is in same position as corresponding letter in correct word
 
     }
-        return "rgb(181,159,59)";
+        return "rgb(181,159,59)"; // if inputted letter is in correct word, but not in corresponding position
 
 }
 
