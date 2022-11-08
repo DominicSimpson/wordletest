@@ -9,10 +9,10 @@
     margin: 0;
   }
 
-  h2 {
+  h1 {
     text-align: center;
-    font-size: 1rem;
-    margin-top: 150px;
+    font-family: 'Ultra', serif;
+
   }
 
   .lettersquares-section {
