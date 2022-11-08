@@ -5,62 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" href="css/style.css">
-    <title>To-do list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <script src="scripts/script.js"></script>
+
+    <title>Wordle Clone</title>
 </head>
 <body>
+
+    <h1>Wordle Take-Home Challenge</h1>
 
     <section class="lettersquares-section" id="main">
 
         <div class="row-of-squares">
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
+            <div class="lettersquare" id="1"></div>
+            <div class="lettersquare" id="2"></div>
+            <div class="lettersquare" id="3"></div>
+            <div class="lettersquare" id="4"></div>
+            <div class="lettersquare" id="5"></div>
         </div>
 
         <div class="row-of-squares">
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-        </div>
-
-        <div class="row-of-squares">
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-        </div>
-
-        <div class="row-of-squares">
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-        </div>
-
-        <div class="row-of-squares">
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-        </div>
-
-        <div class="row-of-squares">
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
-            <div class="lettersquare"></div>
+            <div class="lettersquare" id="6"></div>
+            <div class="lettersquare" id="7"></div>
+            <div class="lettersquare" id="8"></div>
+            <div class="lettersquare" id="9"></div>
+            <div class="lettersquare" id="10"></div>
         </div>
 
     </section>
 
+
+    <section class="keyboard-section" id="keys">
+
+        <div class="keyboard-row">
+            <button data-key="a">a</button>
+            <button data-key="b">b</button>
+            <button data-key="c">c</button>
+            <button data-key="d">d</button>
+            <button data-key="e">e</button>
+            <button data-key="f">f</button>
+            <button data-key="g">g</button>
+            <button data-key="h">h</button>
+        </div>
+
+        <div class="keyboard-row">
+            <button data-key="i">i</button>
+            <button data-key="j">j</button>
+            <button data-key="k">k</button>
+            <button data-key="l">l</button>
+            <button data-key="m">m</button>
+            <button data-key="n">n</button>
+            <button data-key="o">o</button>
+            <button data-key="p">p</button>
+        </div>
+
+        <div class="keyboard-row">
+            <button data-key="q">q</button>
+            <button data-key="r">r</button>
+            <button data-key="s">s</button>
+            <button data-key="t">t</button>
+            <button data-key="u">u</button>
+            <button data-key="v">v</button>
+            <button data-key="w">w</button>
+            <button data-key="x">x</button>
+            <button data-key="y">y</button>
+            <button data-key="z">z</button>
+        </div>
+
+        <div class="keyboard-row">
+            <button data-key="enter" class="wide-button">Enter</button>
+        </div>
+
+
+    </section>
+
+
+    <footer>
+        <span>By Dominic Simpson</span>
+        <span>2022</span>
+    </footer>
 
 </body>
 </html>

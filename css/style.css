@@ -9,28 +9,79 @@
     margin: 0;
   }
 
+  h1 {
+    text-align: center;
+    font-family: 'Ultra', serif;
+
+  }
+
   .lettersquares-section {
     margin-top: 50px;
   }
 
-
-.row-of-squares {
+  .row-of-squares {
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
   }
 
-.lettersquare {
-    width: 50px;
+  .lettersquare {
+    min-width: 50px;
     height: 50px;
-    display: flex;
-    flex-flow: row wrap;
     border: solid 2px #70706f;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
     margin: 2px;
+    color: #000;
+    font-size: 30px;
+    text-transform: capitalize;
+    padding-left: 13px;
+    display: grid;
+    grid-template-rows: repeat(1,5fr);   
+    grid-gap: 5px;
   }
+
+  .to-do-input-section {
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  .keyboard-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .keyboard-row {
+    padding: 5px;
+    touch-action: manipulation;
+  }
+
+  .keyboard-row button {
+    cursor: pointer;
+  }
+
+  .wide-button {
+    width: 80px;
+  }
+
+
+  /*** Footer ***/
+
+footer {
+    background-color: #343434;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer span {
+  display: block;
+}
