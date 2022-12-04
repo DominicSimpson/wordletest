@@ -50,7 +50,7 @@ function handleSubmittedWord() {
                                                     // guessedWordCount * 5 + 1 would be the first letter ID in each row 
                                                     // if there were multiple rows
 
-    const interval = 150; // setTimeout interval time
+    const interval = 200; // setTimeout interval time
 
        currentWordArr.forEach((letter, index) => {
         setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
@@ -79,7 +79,7 @@ function handleSubmittedWord() {
     }
   
     if (currentWord === correctWord) {
-        document.getElementById("gameresponse").innerHTML = "Correct word!";
+        document.getElementById("gameresponse").innerHTML = "Correct word! Congratulations!";
     }
     guessedWords.push([]);
             
