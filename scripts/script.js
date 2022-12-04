@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => { // loads the file
 
-let guessedWords = [[]]; // Array containing array of guessed words
+let guessedWords = [[]]; // Array containing arrays of each guessed word
 
 let keys = document.querySelectorAll('.keyboard-row button'); // stores each key in same variable
 
@@ -17,6 +17,7 @@ function getTileColour (letter, index) {
 
     if (!isCorrectLetter) { // if no matches are found
         return "rgb(128,0,0)";
+        body.className = "wordleletter";
     }
 
     const letterInPosition = correctWord.charAt(index); // Returns the respective letter of each numeric point in the word, 
@@ -35,13 +36,13 @@ function getTileColour (letter, index) {
 
 function handleSubmittedWord() {
 
-    let currentWordArr = getCurrentWordArr();
+    let currentWordArr = getCurrentWordArray();
 
 
     if (currentWordArr.length !== 5) { // Alerts user if they press Enter without inputting in five letters
         console.log("User has not entered in five letters");
         // body.className = "success"; // Unleashes CSS effects
-        window.alert("Answer must be five letters");
+        message.innerHTML = "Answer must be five letters";
     }
 
     let currentWord = currentWordArr.join(''); // joins method joins word into a string
@@ -57,9 +58,7 @@ function handleSubmittedWord() {
             const letterId = firstLetterId + index;
             
             const letterEl = document.getElementById(letterId);
-            
-            letterEl.classList.add('animate__flipInY');
-            
+                        
             letterEl.style = `background-color:${letterSquare};border-color:${letterSquare}`;
 
         }, interval * index);
@@ -76,7 +75,7 @@ function handleSubmittedWord() {
 }
 
 function handleDeletedLetter() {
-    const currentWordArr = getCurrentWordArr(); // same variable as declared in handleSubmitWord function
+    const currentWordArr = getCurrentWordArray(); // same variable as declared in handleSubmitWord function
     currentWordArr.pop(); // pop method is used to delete letter one by one if required
 
     guessedWords[guessedWords.length - 1] = currentWordArr; // takes the currentWordArr and assigns it to guessWords
@@ -111,13 +110,13 @@ for (let i = 0; i < keys.length; i++) { // gets the selected letter from the key
     }
 }
 
-function getCurrentWordArr() {
-    const numberOfGuessedWords = guessedWords.length;
-    return guessedWords[numberOfGuessedWords - 1]; // subtracts -1 from the number of guess words
+function getCurrentWordArray() { 
+    const numberOfGuessedWords = guessedWords.length; // stores number of guessed words in variable
+    return guessedWords[numberOfGuessedWords - 1]; // subtracts -1 from the number of guessed words after user inputs guessed word
 }
 
 function updateGuessedWords(letter) {
-    const currentWordArr = getCurrentWordArr(); 
+    const currentWordArr = getCurrentWordArray(); 
 
     console.log(currentWordArr);
     
