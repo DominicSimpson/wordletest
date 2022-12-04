@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => { // loads the file
 
-let guessedWords = [[]]; // Array containing arrays of each guessed word
+let guessedWords = [[]]; // Array containing array of guessed word
 
 let keys = document.querySelectorAll('.keyboard-row button'); // stores each key in same variable
 
@@ -45,21 +45,25 @@ function handleSubmittedWord() {
         message.innerHTML = "Answer must be five letters";
     }
 
-    let currentWord = currentWordArr.join(''); // joins method joins word into a string
+    let currentWord = currentWordArr.join(''); // join method is used turn five letters in array into a string
     
-    const firstLetterId = guessedWordCount * 5 + 1;
+    const firstLetterId = guessedWordCount * 5 + 1; // the first letter ID in an attempt at a word
+                                                    // guessedWordCount * 5 + 1 would be the first letter ID in each row 
+                                                    // if there were multiple rows
 
-    const interval = 200; // setTimeout
+    const interval = 100; // setTimeout interval time
 
        currentWordArr.forEach((letter, index) => {
         setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
             const letterSquare = getTileColour(letter, index);
 
-            const letterId = firstLetterId + index;
+            let letterId = firstLetterId + index; // gets the ID of each specific letter in an attempted word
+                                                  // (zero-index based)
+            console.log(letterId);
             
-            const letterEl = document.getElementById(letterId);
+            const letterElement = document.getElementById(letterId);
                         
-            letterEl.style = `background-color:${letterSquare};border-color:${letterSquare}`;
+            letterElement.style = `background-color:${letterSquare};border-color:${letterSquare}`;
 
         }, interval * index);
     });
@@ -116,18 +120,18 @@ function getCurrentWordArray() {
 }
 
 function updateGuessedWords(letter) { 
-    const currentWordArr = getCurrentWordArray(); // takes the function above and updates the current word array
+    let currentWordArr = getCurrentWordArray(); // takes the function above and updates the current word array
 
     console.log(currentWordArr);
     
     if (currentWordArr && currentWordArr.length < 5) { // Updates each currentWordArray, and pushes inputted letter into array
         currentWordArr.push(letter);                   // if less than five 
 
-        const availableSpaceElement  = document.getElementById(availableSpace); // availableSpaceElement corresponds to each avaiable 
+        const emptyLetterSquare  = document.getElementById(availableSpace); // emptyLetterSquare corresponds to each available 
                                                                                 // lettersquare / box
-        availableSpace = availableSpace + 1;
+        availableSpace = availableSpace + 1; // updates amount of available space
 
-        availableSpaceElement.textContent = letter;     
+        emptyLetterSquare.textContent = letter; // letter is passed into each available lettersquare / box 
         
     }
 
