@@ -12,12 +12,12 @@ let correctWord = 'raise'; // Correct word
 let guessedWordCount = 0;
 
 
-function getTileColour (letter, index) {
+function getLetterSquareColour (letter, index) {
     const isCorrectLetter = correctWord.includes(letter); // checks if correct word features inputted letter
 
     if (!isCorrectLetter) { // if no matches are found
         return "rgb(128,0,0)";
-        body.className = "wordleletter";
+        letter.style = `wordleletter`;
     }
 
     const letterInPosition = correctWord.charAt(index); // Returns the respective letter of each numeric point in the word, 
@@ -51,24 +51,24 @@ function handleSubmittedWord() {
                                                     // guessedWordCount * 5 + 1 would be the first letter ID in each row 
                                                     // if there were multiple rows
 
-    const interval = 100; // setTimeout interval time
+    const interval = 150; // setTimeout interval time
 
        currentWordArr.forEach((letter, index) => {
         setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
-            const letterSquare = getTileColour(letter, index);
+            const letterSquare = getLetterSquareColour(letter, index);
 
             let letterId = firstLetterId + index; // gets the ID of each specific letter in an attempted word
                                                   // (zero-index based)
             console.log(letterId);
             
-            const letterElement = document.getElementById(letterId);
+            const letterElement = document.getElementById(letterId); // stores letterID of each specific letter in variable
                         
             letterElement.style = `background-color:${letterSquare};border-color:${letterSquare}`;
 
-        }, interval * index);
+        }, interval * index); // interval asychronous JS occurs for each letter once user has pressed Enter
     });
 
-    guessedWordCount += 1;
+    guessedWordCount += 1; // increments the amount of guessed words by one
 
     if (currentWord === correctWord) {
         window.alert("Correct guess!");
