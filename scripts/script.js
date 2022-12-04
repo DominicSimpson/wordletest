@@ -74,14 +74,14 @@ function handleSubmittedWord() {
 }
 
 function handleDeletedLetter() {
-    let currentWordArr = getCurrentWordArr(); // same variable as declared in handleSubmitWord function
-    const deletedLetter = currentWordArr.pop(); // pop method is used to delete letter one by one if required
+    const currentWordArr = getCurrentWordArr(); // same variable as declared in handleSubmitWord function
+    currentWordArr.pop(); // pop method is used to delete letter one by one if required
 
     guessedWords[guessedWords.length - 1] = currentWordArr; // takes the currentWordArr and assigns it to guessWords
                                                             // variable without last letter
-    let lastLetter = document.getElementById(String(availableSpace)); // String constructor is used to create a new string object
+    const lastLetter = document.getElementById(String(availableSpace - 1)); // String constructor is used to create a new string object
     // lastLetter is always the last letter in the five-letter sequence
-    lastLetter.textContent = '';
+    lastLetter.textContent = "";
     availableSpace = availableSpace - 1;
 }
 
