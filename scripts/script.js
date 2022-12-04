@@ -20,7 +20,7 @@ function generateLetterSquareColour (letter, index) {
             console.log(val);
            document.getElementById(val).style.color = "white";
         }
-        return "rgb(128,0,0)";
+        return "rgb(58,58,60)";
     }
 
     const letterInPosition = correctWord.charAt(index); // Returns the respective letter of each numeric point in the word, 
