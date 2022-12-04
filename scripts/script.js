@@ -1,9 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { // loads the file
 
-let guessedWords = [[]];
+let guessedWords = [[]]; // Array containing array of guessed words
 
-
-let keys = document.querySelectorAll('.keyboard-row button');
+let keys = document.querySelectorAll('.keyboard-row button'); // stores each key in same variable
 
 let availableSpace = 1;
 
@@ -35,7 +34,7 @@ function getTileColor (letter, index) {
 }
 
 
-function handleSubmitWord() {
+function handleSubmittedWord() {
 
     let currentWordArr = getCurrentWordArr();
 
@@ -43,14 +42,14 @@ function handleSubmitWord() {
         window.alert("Answer must be five letters");
     }
 
-    let currentWord = currentWordArr.join(''); // joins word into a string
+    let currentWord = currentWordArr.join(''); // joins method joins word into a string
     
     const firstLetterId = guessedWordCount * 5 + 1;
 
     const interval = 200;
 
        currentWordArr.forEach((letter, index) => {
-        setTimeout(() => {
+        setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
             const tileColor = getTileColor(letter, index);
 
             const letterId = firstLetterId + index;
@@ -74,15 +73,21 @@ function handleSubmitWord() {
             
 }
 
+function handleDeletedWord() {
+    let currentWordArr = getCurrentWordArr(); // same variable as declared in handleSubmitWord function
+    const deletedLetter = currentWordArr.pop(); // pop method is used to delete letter
+
+}
+
 
 for (let i = 0; i < keys.length; i++) { // gets the selected letter from the keypad
 
     keys[i].onclick = ( { target } ) => {
 
-        const letter = target.getAttribute('data-key'); 
+        const letter = target.getAttribute('data-key'); // gets the individual letter
 
         if  (letter === 'enter') {
-            handleSubmitWord(); 
+            handleSubmittedWord();
             return; 
         }
 

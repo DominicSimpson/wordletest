@@ -65,6 +65,7 @@
   .keyboard-row button {
     cursor: pointer;
     margin: 2px;
+    padding: 5px;
   }
 
   .wide-button {
