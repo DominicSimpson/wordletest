@@ -12,7 +12,7 @@ let word = 'raise'; // Correct word
 let guessedWordCount = 0;
 
 
-function getTileColor (letter, index) {
+function getTileColour (letter, index) {
     const isCorrectLetter = word.includes(letter); // checks if inputted letter features in correct word
 
     if (!isCorrectLetter) {
@@ -38,7 +38,7 @@ function handleSubmittedWord() {
 
     let currentWordArr = getCurrentWordArr();
 
-    if (currentWordArr.length !== 5) {
+    if (currentWordArr.length !== 5) { // Alerts user if they press Enter without inputting in five letters
         window.alert("Answer must be five letters");
     }
 
@@ -50,7 +50,7 @@ function handleSubmittedWord() {
 
        currentWordArr.forEach((letter, index) => {
         setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
-            const tileColor = getTileColor(letter, index);
+            const tileColor = getTileColour(letter, index);
 
             const letterId = firstLetterId + index;
             
@@ -73,10 +73,16 @@ function handleSubmittedWord() {
             
 }
 
-function handleDeletedWord() {
+function handleDeletedLetter() {
     let currentWordArr = getCurrentWordArr(); // same variable as declared in handleSubmitWord function
-    const deletedLetter = currentWordArr.pop(); // pop method is used to delete letter
+    const deletedLetter = currentWordArr.pop(); // pop method is used to delete letter one by one if required
 
+    guessedWords[guessedWords.length - 1] = currentWordArr; // takes the currentWordArr and assigns it to guessWords
+                                                            // variable without last letter
+    let lastLetter = document.getElementById(String(availableSpace)); // String constructor is used to create a new string object
+    // lastLetter is always the last letter in the five-letter sequence
+    lastLetter.textContent = '';
+    availableSpace = availableSpace - 1;
 }
 
 
@@ -86,9 +92,14 @@ for (let i = 0; i < keys.length; i++) { // gets the selected letter from the key
 
         const letter = target.getAttribute('data-key'); // gets the individual letter
 
-        if  (letter === 'enter') {
+        if  (letter === 'enter') { // if the user clicks enter
             handleSubmittedWord();
             return; 
+        }
+
+        if (letter === 'delete') { // if the user clicks delete
+            handleDeletedLetter(); 
+            return;
         }
 
         console.log(letter);
