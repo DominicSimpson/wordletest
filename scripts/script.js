@@ -4,7 +4,7 @@ let guessedWords = [[]]; // Array containing arrays of each guessed word
 
 let keys = document.querySelectorAll('.keyboard-row button'); // stores each key in same variable
 
-let availableSpace = 1;
+let availableSpace = 1; // initialised number of letters available in each guessed word
 
 let correctWord = 'raise'; // Correct word
 
@@ -115,19 +115,19 @@ function getCurrentWordArray() {
     return guessedWords[numberOfGuessedWords - 1]; // subtracts -1 from the number of guessed words after user inputs guessed word
 }
 
-function updateGuessedWords(letter) {
-    const currentWordArr = getCurrentWordArray(); 
+function updateGuessedWords(letter) { 
+    const currentWordArr = getCurrentWordArray(); // takes the function above and updates the current word array
 
     console.log(currentWordArr);
     
-    if (currentWordArr && currentWordArr.length < 5) {
-        currentWordArr.push(letter);
+    if (currentWordArr && currentWordArr.length < 5) { // Updates each currentWordArray, and pushes inputted letter into array
+        currentWordArr.push(letter);                   // if less than five 
 
-        const availableSpaceEl  = document.getElementById(availableSpace);
-
+        const availableSpaceElement  = document.getElementById(availableSpace); // availableSpaceElement corresponds to each avaiable 
+                                                                                // lettersquare / box
         availableSpace = availableSpace + 1;
 
-        availableSpaceEl.textContent = letter;     
+        availableSpaceElement.textContent = letter;     
         
     }
 
