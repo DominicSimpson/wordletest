@@ -54,12 +54,17 @@
   }
 
   .keyboard-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: space-around;
     padding: 5px;
     touch-action: manipulation;
+    width: 100%;
   }
 
   .keyboard-row button {
     cursor: pointer;
+    margin: 2px;
   }
 
   .wide-button {
