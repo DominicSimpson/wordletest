@@ -37,7 +37,10 @@ function handleSubmittedWord() {
 
     let currentWordArr = getCurrentWordArr();
 
+
     if (currentWordArr.length !== 5) { // Alerts user if they press Enter without inputting in five letters
+        console.log("User has not entered in five letters");
+        // body.className = "success"; // Unleashes CSS effects
         window.alert("Answer must be five letters");
     }
 
@@ -45,11 +48,11 @@ function handleSubmittedWord() {
     
     const firstLetterId = guessedWordCount * 5 + 1;
 
-    const interval = 200;
+    const interval = 200; // setTimeout
 
        currentWordArr.forEach((letter, index) => {
         setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
-            const tileColor = getTileColour(letter, index);
+            const letterSquare = getTileColour(letter, index);
 
             const letterId = firstLetterId + index;
             
@@ -57,7 +60,7 @@ function handleSubmittedWord() {
             
             letterEl.classList.add('animate__flipInY');
             
-            letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
+            letterEl.style = `background-color:${letterSquare};border-color:${letterSquare}`;
 
         }, interval * index);
     });
