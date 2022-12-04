@@ -6,21 +6,20 @@ let keys = document.querySelectorAll('.keyboard-row button'); // stores each key
 
 let availableSpace = 1;
 
-let word = 'raise'; // Correct word
+let correctWord = 'raise'; // Correct word
 
 
 let guessedWordCount = 0;
 
 
 function getTileColour (letter, index) {
-    const isCorrectLetter = word.includes(letter); // checks if inputted letter features in correct word
+    const isCorrectLetter = correctWord.includes(letter); // checks if correct word features inputted letter
 
-    if (!isCorrectLetter) {
-        return "rgb(58,58,60)";
-
+    if (!isCorrectLetter) { // if no matches are found
+        return "rgb(128,0,0)";
     }
 
-    const letterInPosition = word.charAt(index); // Returns the respective letter of each numeric point in the word, 
+    const letterInPosition = correctWord.charAt(index); // Returns the respective letter of each numeric point in the word, 
                                                 // e.g., in word, 1 is r, 2 is a, etc.
     console.log(letterInPosition);
     const isCorrectPosition = letter === letterInPosition;    
@@ -65,7 +64,7 @@ function handleSubmittedWord() {
 
     guessedWordCount += 1;
 
-    if (currentWord === word) {
+    if (currentWord === correctWord) {
         window.alert("Correct guess!");
     }
 
