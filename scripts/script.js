@@ -79,7 +79,7 @@ function handleSubmittedWord() {
     }
   
     if (currentWord === correctWord) {
-        window.alert("Correct guess!");
+        document.getElementById("gameresponse").innerHTML = "Correct word!";
     }
     guessedWords.push([]);
             
