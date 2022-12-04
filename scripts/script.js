@@ -8,24 +8,28 @@ let availableSpace = 1; // initialised number of letters available in each guess
 
 let correctWord = 'raise'; // Correct word
 
+let guessedWordCount = 0; // increments to one at end of this test
 
-let guessedWordCount = 0;
 
-
-function getLetterSquareColour (letter, index) {
+function generateLetterSquareColour (letter, index) {
     const isCorrectLetter = correctWord.includes(letter); // checks if correct word features inputted letter
+                                                          // includes method returns boolean true or false
 
     if (!isCorrectLetter) { // if no matches are found
+        for(let val=1 ; val <= 5; val++){
+            console.log(val);
+           document.getElementById(val).style.color = "white";
+        }
         return "rgb(128,0,0)";
-        letter.style = `wordleletter`;
     }
 
     const letterInPosition = correctWord.charAt(index); // Returns the respective letter of each numeric point in the word, 
-                                                // e.g., in word, 1 is r, 2 is a, etc.
+                                                // e.g., in correct word, r for 1, a for 2, etc.
     console.log(letterInPosition);
-    const isCorrectPosition = letter === letterInPosition;    
+    const ifLetterFeaturesInCorrectWord = letter === letterInPosition; // if letter features in correct word, 
+                                                                       // whether in correct position or not    
 
-    if (isCorrectPosition) {
+    if (ifLetterFeaturesInCorrectWord) {
         return "rgb(83,141,78)"; // if inputted letter is in same position as corresponding letter in correct word
 
     }
@@ -33,17 +37,12 @@ function getLetterSquareColour (letter, index) {
 
 }
 
-
 function handleSubmittedWord() {
 
     let currentWordArr = getCurrentWordArray();
 
-
-    if (currentWordArr.length !== 5) { // Alerts user if they press Enter without inputting in five letters
-        console.log("User has not entered in five letters");
-        // body.className = "success"; // Unleashes CSS effects
-        message.innerHTML = "Answer must be five letters";
-    }
+    document.getElementById("gameresponse").innerHTML = '';
+   
 
     let currentWord = currentWordArr.join(''); // join method is used turn five letters in array into a string
     
@@ -55,7 +54,7 @@ function handleSubmittedWord() {
 
        currentWordArr.forEach((letter, index) => {
         setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
-            const letterSquare = getLetterSquareColour(letter, index);
+            const letterSquare = generateLetterSquareColour(letter, index);
 
             let letterId = firstLetterId + index; // gets the ID of each specific letter in an attempted word
                                                   // (zero-index based)
@@ -70,17 +69,25 @@ function handleSubmittedWord() {
 
     guessedWordCount += 1; // increments the amount of guessed words by one
 
+    if (currentWordArr.length !== 5) { // Alerts user if they press Enter without inputting in five letters
+        console.log("User has not entered in five letters", currentWordArr.length);
+       // body.className = "success"; // Unleashes CSS /// console.log('numberOfWORDS', numberOfGuessedWords);
+
+        document.getElementById("gameresponse").innerHTML = "Answer must be five letters";
+   
+       
+    }
+  
     if (currentWord === correctWord) {
         window.alert("Correct guess!");
     }
-
     guessedWords.push([]);
             
 }
 
 function handleDeletedLetter() {
     const currentWordArr = getCurrentWordArray(); // same variable as declared in handleSubmitWord function
-    currentWordArr.pop(); // pop method is used to delete letter one by one if required
+    currentWordArr.pop(); // pop method is used to delete last letter one by one
 
     guessedWords[guessedWords.length - 1] = currentWordArr; // takes the currentWordArr and assigns it to guessWords
                                                             // variable without last letter
@@ -116,6 +123,7 @@ for (let i = 0; i < keys.length; i++) { // gets the selected letter from the key
 
 function getCurrentWordArray() { 
     const numberOfGuessedWords = guessedWords.length; // stores number of guessed words in variable
+   
     return guessedWords[numberOfGuessedWords - 1]; // subtracts -1 from the number of guessed words after user inputs guessed word
 }
 

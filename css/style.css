@@ -72,35 +72,10 @@
     width: 80px;
   }
 
-  #message {
-    opacity:          0;
-    transition:       opacity 0.2s ease;
-    position:         absolute;
-    padding:          285px 5px;
-    background-color: rgba(0,0,0,0.5);
-    color:            white;
-    width:            calc(100% - 8px);
-  }
-
-  body.success {
-    background-color: #FFD700;
-    transition:       0.2s ease;
-  }
-  
-  body.success #message {
-    opacity:          1;
-    transition:       opacity 0.2 ease;
-  }
-
-  body.wordleletter {
-    color: white;
-  }
- 
-  
-#message {
-  font-family:      Arial, Helvetica, sans-serif;
-  color:            #fff;
-}
+ #gameresponse {
+    text-align: center;
+    margin: 5px;
+ }
 
   /*** Footer ***/
 
