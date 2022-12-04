@@ -75,7 +75,7 @@ function handleSubmitWord() {
 }
 
 
-for (let i = 0; i < keys.length; i++) { // gets the letter from the keypad
+for (let i = 0; i < keys.length; i++) { // gets the selected letter from the keypad
 
     keys[i].onclick = ( { target } ) => {
 
