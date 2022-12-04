@@ -70,9 +70,7 @@ function handleSubmitWord() {
         window.alert("Correct guess!");
     }
 
-
     guessedWords.push([]);
-
             
 }
 
@@ -97,7 +95,7 @@ for (let i = 0; i < keys.length; i++) {
 
 function getCurrentWordArr() {
     const numberOfGuessedWords = guessedWords.length;
-    return guessedWords[numberOfGuessedWords - 1];
+    return guessedWords[numberOfGuessedWords - 1]; // subtracts -1 from the number of guess words
 }
 
 function updateGuessedWords(letter) {
@@ -116,8 +114,6 @@ function updateGuessedWords(letter) {
         
     }
 
-
     }
-
 
 });
