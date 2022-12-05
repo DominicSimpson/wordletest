@@ -13,7 +13,7 @@ let guessedWordCount = 0; // increments to one at end of this test
 let finalWordArray = []; // contains values of final submitted word
 
 
-function generateLetterSquareColour (letter, index) {
+function checkLetter (letter, index) {
     const isCorrectLetter = correctWord.includes(letter); // checks if correct word features inputted letter
                                                           // includes method returns boolean true or false
 
@@ -35,8 +35,8 @@ function generateLetterSquareColour (letter, index) {
                                                         // in the correct word, 
                                                         // e.g., in correct word, r for 1, a for 2, etc.
     console.log(letterInPosition);
-    const ifLetterFeaturesInCorrectWord = letter === letterInPosition; // if letter features in correct word, 
-                                                                       // whether in correct position or not    
+    const ifLetterFeaturesInCorrectWord = letter === letterInPosition; // tests if inputted letter features in correct word, 
+                                                                       // and is in correct position    
 
     if (ifLetterFeaturesInCorrectWord) {
         return "rgb(83,141,78)"; // if inputted letter is in same position as corresponding letter in correct word
@@ -63,7 +63,7 @@ function handleSubmittedWord() {
 
        currentWordArr.forEach((letter, index) => {
         setTimeout(() => { // asychronous JS for applying colour effects to letters after user presses Enter
-            const letterSquare = generateLetterSquareColour(letter, index);
+            const letterSquare = checkLetter(letter, index);
 
             let letterId = firstLetterId + index; // gets the ID of each specific letter in an attempted word
                                                   // (zero-index based)
