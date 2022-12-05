@@ -14,7 +14,6 @@ let finalWordArray = []; // contains values of final submitted word
 
 
 function checkLetter (letter, index) {
-function checkLetter (letter, index) {
     const isCorrectLetter = correctWord.includes(letter); // checks if correct word features inputted letter
                                                           // includes method returns boolean true or false
 
