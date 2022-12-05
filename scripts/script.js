@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", () => { // loads the file
 
 let guessedWords = [[]]; // Array containing array of guessed word
 
-let keys = document.querySelectorAll('.keyboard-row button'); // stores each key in same variable
+let keys = document.querySelectorAll('.keyboard-row button'); // stores each key (A-Z) in one variable
 
-let availableSpace = 1; // initialised number of letters available in each guessed word
+let availableSpace = 1; // initialised number of letters available in each attempt at a guess
 
 let correctWord = 'raise'; // Correct word
 
 let guessedWordCount = 0; // increments to one at end of this test
+
+let finalWordArray = []; // contains values of final submitted word
 
 
 function generateLetterSquareColour (letter, index) {
@@ -16,15 +18,22 @@ function generateLetterSquareColour (letter, index) {
                                                           // includes method returns boolean true or false
 
     if (!isCorrectLetter) { // if no matches are found
-        for(let val=1 ; val <= 5; val++){
-            console.log(val);
-           document.getElementById(val).style.color = "white";
-        }
+        console.log('finalWordArray', finalWordArray.length);
+
+        for(let val=1 ; val <= finalWordArray.length; val++){
+        console.log('value',val);
+        
+        setTimeout(()=>{
+        document.getElementById(val).style.color = "white";
+        }, 1000)
+        
+    }
         return "rgb(58,58,60)";
     }
 
-    const letterInPosition = correctWord.charAt(index); // Returns the respective letter of each numeric point in the word, 
-                                                // e.g., in correct word, r for 1, a for 2, etc.
+    const letterInPosition = correctWord.charAt(index); // Returns the respective letter of each numeric point 
+                                                        // in the correct word, 
+                                                        // e.g., in correct word, r for 1, a for 2, etc.
     console.log(letterInPosition);
     const ifLetterFeaturesInCorrectWord = letter === letterInPosition; // if letter features in correct word, 
                                                                        // whether in correct position or not    
@@ -81,7 +90,7 @@ function handleSubmittedWord() {
     if (currentWord === correctWord) {
         document.getElementById("gameresponse").innerHTML = "Correct word! Congratulations!";
     }
-    guessedWords.push([]);
+    guessedWords.push([]); // pushes attempt at guessing correct word into array
             
 }
 
@@ -134,6 +143,9 @@ function updateGuessedWords(letter) {
     
     if (currentWordArr && currentWordArr.length < 5) { // Updates each currentWordArray, and pushes inputted letter into array
         currentWordArr.push(letter);                   // if less than five 
+
+        finalWordArray = currentWordArr;                // this then becomes the finalWordArray, which has a value for each letter
+        console.log('finalWordArray',finalWordArray);
 
         const emptyLetterSquare  = document.getElementById(availableSpace); // emptyLetterSquare corresponds to each available 
                                                                                 // lettersquare / box
