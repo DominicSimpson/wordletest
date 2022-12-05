@@ -1,10 +1,22 @@
-# wordletest
+# Wordle Challenge Attempt
 
-#### I am going to look at the letters that do exist in the correct five-letter word, but are not in the correct order of the correct word. For example, the 'd' in 'Coders' could be uncovered, but not necessarily as the third letter in the word.
+---
+
+## Background
+
+![screenshot(2)](https://user-images.githubusercontent.com/52511353/205694523-24380e50-d87d-46f6-8e64-19f6f970b0f1.png)
+
+### Wordle is an online game in which the player is given six attempts to uncover a secret word, which is usually five letters long (but may be longer or less in other interations). The screenshot above shows my own attempt at the *New York Times* version of the game, with one chance less to spare. 
+
+### The colour coding relates to the following:
+
+[-] Grey: Inputted letter 
+
+### For this take-home challenge, I am going to look at how the code behind Wordle assesses whether an inputted letter from a user exists in the correct, secret word, and if so, if it corresponds to the correct position. 
 
 | Variables                       | Description                                                                     | Type                  |
 | -------------                   |:-------------:                                                                  | -----:                |
-| correctWord                     | The correct word that users have to try and guess                               | Variable              |
+| correctWord                     | The correct, secret word that users have to try and guess                       | Variable              |
 | keys                            | Stores each key (A-Z) in one variable                                           | DOM Variable          |
 | letter                          | Gets the individual inputted letter                                             | DOM Variable          |
 | guessedWords                    | Array containing array of guessed word                                          | Variable              |
