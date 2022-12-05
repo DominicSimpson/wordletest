@@ -6,11 +6,13 @@
 
 ![screenshot(2)](https://user-images.githubusercontent.com/52511353/205694523-24380e50-d87d-46f6-8e64-19f6f970b0f1.png)
 
-### Wordle is an online game in which the player is given six attempts to uncover a secret word, which is usually five letters long (but may be longer or less in other interations). The screenshot above shows my own attempt at the *New York Times* version of the game, with one chance less to spare. 
+### Wordle is an online game in which the player is given six attempts to uncover a secret, correct word, which is usually five letters long (but may be longer or less in other interations). The screenshot above shows my own attempt at the *New York Times* version of the game, with one chance less to spare. 
 
-### The colour coding relates to the following:
+### The colour coding in the example above relates to the following:
 
-[-] Grey: Inputted letter 
+- Grey: Inputted letter does not feature in correct word 
+- Yellowish tinge: Inputted letter does feature in correct word, but not at the same position in word
+- Green: Inputted letter features in correct word, and at the correct position in word
 
 ### For this take-home challenge, I am going to look at how the code behind Wordle assesses whether an inputted letter from a user exists in the correct, secret word, and if so, if it corresponds to the correct position. 
 
