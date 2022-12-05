@@ -20,7 +20,7 @@
 
 ## The Code
 
-I set up the lettersquares and keyboard in the HTML (I could've used the QWERTY system, as the *NYT* version does, but settled on an alphabetic keyboard). Each keyboard letter is stored in the same variable, keys, first of all. An iteration through the 
+I set up the lettersquares and keyboard in the HTML (I could've used the QWERTY system, as the *NYT* version does, but settled on an alphabetic keyboard). Each keyboard letter is stored in the same variable, keys, first of all. An iteration through the key variable gets the individual letter, plus discerns if the user has pressed Enter or Delete, both of which trigger appropriate functions. 
 
 ---
 
