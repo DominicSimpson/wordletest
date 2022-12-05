@@ -43,7 +43,8 @@
         updateGuessedWords(letter);
 
     }
-}```
+}
+```
 
 Meanwhile, I set the correct, secret word as 'raise', in a variable called 'correctWord'.
 
