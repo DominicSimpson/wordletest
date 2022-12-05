@@ -46,7 +46,7 @@
 }
 ```
 
-Meanwhile, I set the correct, secret word as 'raise', in a variable called 'correctWord'.
+###### Meanwhile, I set the correct, secret word as 'raise', in a variable called 'correctWord'.
 
 ###### The function that is the most important here is the `generateLetterSquareColour` function. The `generateLetterSquareColour` function takes two parameters, the aforementioned letter and the index point of a letter. The `includes` method, which determines whether a given value includes a certain value among the value's elements, is used on the `correctWord` variable to test if that variable includes the letter parameter, and is converted to the variable `isCorrectLetter`, which now returns a Boolean (which the `includes` method is). If  isCorrectLetter as a Boolean returns false, that means that no matches are found between the inputted letter and the letters of the correct word; this then triggers the grey colour mentioned above via `return "rgb(58,58,60)"`. However, black text on grey is hard to read, so I had to set up a for loop on each value - each letter - that does not feature in the correct word, so as to iterate through each value and apply a white colour to the font. This turned out to be tricky, as the last letter in grey would not feature in white, so the way to do it was to set up an array called `finalWordArray`, which contains the values of each letter in a submitted word.    
 
