@@ -1,85 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
-
-    <title>Basic Wordle Attempt</title>
+	<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/style.css">
+	<title>The Monty Hall Problem</title>
 </head>
 <body>
+	<div id="body">
+		<header>
+			<h1>Welcome to The Monty Hall Problem</h1>
+		</header>
 
-    <h1>Wordle Take-Home Challenge</h1>
+		<div class="displayResult">
+		</div>
+		<div id="instructions" class="instructions">
+			<div id="row1" class="row1">
+			Please Select a door
+			</div>
+			<div id="d1">You selected door1</div>
+			<div id="d2">You selected door2</div>
+			<div id="d3">You selected door3</div>
+			<div id="row2" class="row2">
+				
 
-    <section class="lettersquares-section" id="main">
+			<p>Ok, I'm opening a door</p>
 
-        <div class="row-of-squares">
-            <div class="lettersquare" id="1"></div>
-            <div class="lettersquare" id="2"></div>
-            <div class="lettersquare" id="3"></div>
-            <div class="lettersquare" id="4"></div>
-            <div class="lettersquare" id="5"></div>
-        </div>
+			<p>Do you want to switch?</p>
 
 
-    </section>
-    
-        <div id="gameresponse"></div>
+				<div class="buttons">
+					<button id="btn-1">Yes</button>
+					<button id="btn-2">No</button>
+				</div>
+			</div>
+		</div>
 
-    <section class="keyboard-section" id="keys">
+		<main class="door-row">
+			<img id="door1" class="door"
+				src="images/door.jpg" alt="door">
+			<img id="door2" class="door"
+				src="images/door.jpg" alt="door">
+			<img id="door3" class="door"
+				src="images/door.jpg" alt="door">
 
-        <div class="keyboard-row">
-            <button data-key="a">A</button> <!-- Data attribute -->
-            <button data-key="b">B</button>
-            <button data-key="c">C</button>
-            <button data-key="d">D</button>
-            <button data-key="e">E</button>
-            <button data-key="f">F</button>
-            <button data-key="g">G</button>
-            <button data-key="h">H</button>
-        </div>
+		</main>
+	</div>
+	<div id="switchAndWin" class="result">
+		
 
-        <div class="keyboard-row">
-            <button data-key="i">I</button>
-            <button data-key="j">J</button>
-            <button data-key="k">K</button>
-            <button data-key="l">L</button>
-            <button data-key="m">M</button>
-            <button data-key="n">N</button>
-            <button data-key="o">O</button>
-            <button data-key="p">P</button>
-        </div>
+		<p>Congratulations!!!!!</p>
 
-        <div class="keyboard-row">
-            <button data-key="q">Q</button>
-            <button data-key="r">R</button>
-            <button data-key="s">S</button>
-            <button data-key="t">T</button>
-            <button data-key="u">U</button>
-            <button data-key="v">V</button>
-            <button data-key="w">W</button>
-            <button data-key="x">X</button>
-            <button data-key="y">Y</button>
-            <button data-key="z">Z</button>
-        </div>
+		<p>You made the right choice by switching</p>
 
-        <div class="keyboard-row">
-            <button data-key="enter" class="wide-button">Enter</button>
-            <button data-key="delete" class="wide-button">Delete</button>
-        </div>
 
-    </section>
+<p>
+	By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
 
-    <footer>
-        <span>By Dominic Simpson</span>
-        <span>2022</span>
-    </footer>
 
-    <script src="scripts/script.js"></script>
+		<div class="links">
+		
+			<button><a href="index.html">
+					Play again
+					</a></button>
+		</div>
+	</div>
+	<div id="switchAndLose" class="result">
+		
 
+<p>You Lost!!!</p>
+
+
+		
+
+<p>Commiserations - the chances of you winning was 
+	0.67 / two-thirds / 66.6666666% since you switched to another door, but unfortunately you still lost. 
+  Bad luck. </p>
+
+
+		
+
+<p>Play again to redefine your luck</p>
+
+
+		<div class="links">
+			
+			<button><a href="index.html">Play again</a></button>
+		</div>
+	</div>
+	<div id="NoSwitchAndWin" class="result">
+		
+
+<p>Congratulations - you are a very lucky person!</p>
+
+
+<p>
+	The probability of you winning was only 0.33 because you didn't switch to another door, yet you still won.
+	If you had switched doors, you would've increased your probability 
+	of winning to 0.67 / two-thirds / 66.6666666%.</p>
+
+
+		<div class="links">
+			
+			<button><a href="index.html">
+			Play again</a>
+			</button>
+		</div>
+	</div>
+	<div id="NoSwitchAndLose" class="result">
+		
+
+<p>You Lost</p>
+
+
+		
+
+<p>Since you didn't switch, your chances of winning were only 33%.
+	Play again to redefine your luck.</p>
+
+
+		
+
+<p>Play again to redefine your luck</p>
+
+
+		<div class="links">
+			
+			<button><a href="index.html">Play again</a></button>
+		</div>
+	</div>
+	<script src="scripts/script.js" async defer></script>
+	<script src="scripts/localstorage.js"></script>
 </body>
 </html>
