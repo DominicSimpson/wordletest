@@ -14,7 +14,7 @@
 - Yellowish tinge: Inputted letter does feature in correct word, but not at the same position in word
 - Green: Inputted letter features in correct word, and at the correct position in word
 
-### For this take-home challenge, I am going to look at how the code behind Wordle assesses whether an inputted letter from a user exists in the correct, secret word, and if so, if it corresponds to the correct position. 
+### For this take-home challenge, I am going to look solely at how the code behind Wordle assesses whether an inputted letter from a user exists in the correct, secret word, and if so, if it corresponds to the correct position or not. I will not be using an API, as the test only needs to be done once, so I do not need to generate new correct words each time. This is also why I am only employing one row of what I call 'lettersquares' (or boxes, or text boxes), rather than six, as in the *NYT* version.  
 
 | Variables                       | Description                                                                     | Type                  |
 | -------------                   |:-------------:                                                                  | -----:                |
