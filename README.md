@@ -20,7 +20,7 @@
 
 ## The Code
 
-I set up the lettersquares and a keyboard in the HTML (the keyboard doesn't use QWERTY, as it is hardly necessary).  
+I set up the lettersquares and keyboard in the HTML (I could've used the QWERTY system, as the *NYT* version does, but settled on an alphabetic keyboard). Each keyboard letter is stored in the same variable, keys, first of all. An iteration through the 
 
 ---
 
