@@ -91,7 +91,8 @@ const correctWord = 'raise' > the correct, secret word;
 let keys = store keyboard buttons in one variable;}
 
 keys.onclick {
-= const letter for each individual letter
+= const letter for each individual letter;
+
 if (letter equals enter) {
 trigger function to handle submitted word }
 
@@ -99,7 +100,7 @@ else (letter equals delete) {
 trigger function to delete letter(s), starting from end of word }
 }
 
-update number of guessed words
+update number of guessed words in separate function;
 
 }
 
