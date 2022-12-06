@@ -83,7 +83,7 @@
 | emptyLetterSquare               | Corresponds to each available lettersquare / box                                            | DOM Variable          |
 | interval                        | setTimeout interval time for colour effect on letters after user presses enter              | DOM Variable          |
 
-Pseudocode:
+#### Pseudocode:
 
 ```js
 const correctWord = 'raise' > the correct, secret word;
@@ -131,3 +131,5 @@ but not at correct position}
     }
 
 }
+
+---
