@@ -87,7 +87,9 @@ Pseudocode:
 
 ```js
 const correctWord = 'raise' > the correct, secret word;
-let keys = store keyboard buttons in one variable;
+
+let keys = store keyboard buttons in one variable;}
+
 ```keys.onclick {
 = const letter for each individual letter
 if (letter equals enter) {
@@ -105,3 +107,26 @@ function handleSubmitWord {
 convert inputted word to string via parseInt or join method;
 link to separate function checkLetter to check each individual letter against correct word;
 get the ID of each letter to iterate over submitted word;
+}
+
+function checkLetter {
+check inputted letter against correct word using includes method;
+
+if (!inputtedletter === correctWord) {
+brown colour to signify no letter matches
+};
+
+return respective letter of each numeric point of correct word via charAt method and store in variable;
+
+check inputted letter against variable;
+
+if (inputted letter features in correct word) {
+green colour to signify exact match};
+
+else {
+yellowish tinge to signify inputted letter is in correct word, 
+but not at correct position}
+
+    }
+
+}
