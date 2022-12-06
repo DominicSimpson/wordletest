@@ -20,7 +20,7 @@
 
 ## The Code
 
-###### I set up the lettersquares and keyboard in the HTML (I could've used the QWERTY system, as the *NYT* version does, but settled on an alphabetic keyboard). Each keyboard letter is stored in the same variable, `keys`, first of all. An iteration through the `keys` variable gets the individual inputted letter, stored in the variable `letter`, plus discerns if the user has pressed Enter or Delete, both of which trigger appropriate functions. 
+###### I set up the lettersquares and keyboard in the HTML (I could've used the QWERTY system, as the *NYT* version does, but settled on an alphabetic keyboard). Each keyboard letter is stored in the same variable, `keys`, first of all. An iteration through the `keys` variable gets the individual inputted letter, stored in the variable `letter`, plus discerns if the user has pressed Enter or Delete, both of which trigger appropriate functions. The `updateGuessedWords` function is also triggered, which increments the amount of times the user attempts to uncover the correct word (in this version, it will only be once, but in professional versions such as the *NYT*'s, it would be six). 
 
 ```for (let i = 0; i < keys.length; i++) { // gets the selected letter from the keypad
 
@@ -82,3 +82,26 @@
 | lastLetter                      | Gets last letter so as to enable Delete letter function                                     | DOM Variable          |
 | emptyLetterSquare               | Corresponds to each available lettersquare / box                                            | DOM Variable          |
 | interval                        | setTimeout interval time for colour effect on letters after user presses enter              | DOM Variable          |
+
+Pseudocode:
+
+```js
+const correctWord = 'raise' > the correct, secret word;
+let keys = store keyboard buttons in one variable;
+```keys.onclick {
+= const letter for each individual letter
+if (letter equals enter) {
+trigger function to handle submitted word }
+
+else (letter equals delete) {
+trigger function to delete letter(s), starting from end of word }
+}
+
+update number of guessed words
+
+}
+
+function handleSubmitWord {
+convert inputted word to string via parseInt or join method;
+link to separate function checkLetter to check each individual letter against correct word;
+get the ID of each letter to iterate over submitted word;
